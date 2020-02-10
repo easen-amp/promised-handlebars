@@ -25,7 +25,8 @@
     "prethoughtcheck": "thought --version || npm -g install thought",
     "thoughtcheck": "thought check-engines",
     "version": "thoughtful changelog -o -a && npm run thought",
-    "preversion": "npm run thoughtcheck"
+    "preversion": "npm run thoughtcheck",
+    "build-dist": "NODE_ENV=production webpack"
   },
   "dependencies": {
     "deep-aplus": "^1.0.2"
@@ -47,7 +48,11 @@
     "lib"
   ],
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
     "q": "^1.4.1",
+    "babel-loader": "^8.0.5",
     "bluebird": "^3.4.1",
     "chai": "^3.2.0",
     "chai-as-promised": "^6.0.0",
@@ -56,7 +61,9 @@
     "handlebars": "^3||^4",
     "mocha": "^3.2.0",
     "q-io": "^1.13.1",
-    "thoughtful-release": "^0.3.0"
+    "thoughtful-release": "^0.3.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
   },
   "peerDependencies": {
     "handlebars": "3||4"
